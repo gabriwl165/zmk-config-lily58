@@ -46,7 +46,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DTAPA";
             #binding-cells = <0>;
-            bindings = <&kp A>, <&mt LS(C) A>;
+            bindings = <&kp A>, <&mt TILDE A>;
         };
     };
 
