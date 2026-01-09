@@ -26,14 +26,20 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DTAPRIGHTBRACKETS";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_BRACKET>, <&kp RIGHT_BRACE>;
+            bindings =
+                <&kp RIGHT_BRACKET>,
+                <&kp RIGHT_BRACE>,
+                <&kp RIGHT_PARENTHESIS>;
         };
 
         DTapLeftBrackets: DTapLeftBrackets {
             compatible = "zmk,behavior-tap-dance";
             label = "DTAPLEFTBRACKETS";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_BRACE>;
+            bindings =
+                <&kp LEFT_BRACKET>,
+                <&kp LEFT_BRACE>,
+                <&kp LEFT_PARENTHESIS>;
         };
 
         DTapA: DTapA {
