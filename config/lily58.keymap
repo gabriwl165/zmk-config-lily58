@@ -21,6 +21,29 @@
         };
     };
 
+    behaviors {
+        DTapRightBrackets: DTapRightBrackets {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTAPRIGHTBRACKETS";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET>, <&kp RIGHT_BRACE>;
+        };
+
+        DTapLeftBrackets: DTapLeftBrackets {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTAPLEFTBRACKETS";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_BRACE>;
+        };
+
+        DTapA: DTapA {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTAPA";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&mt LS(C) A>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
