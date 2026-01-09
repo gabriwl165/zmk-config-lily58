@@ -27,9 +27,9 @@
             label = "DTAPRIGHTBRACKETS";
             #binding-cells = <0>;
             bindings =
-                <&kp RIGHT_BRACKET>,
+                <&kp RIGHT_PARENTHESIS>,
                 <&kp RIGHT_BRACE>,
-                <&kp RIGHT_PARENTHESIS>;
+                <&kp RIGHT_BRACKET>;
         };
 
         DTapLeftBrackets: DTapLeftBrackets {
@@ -37,9 +37,9 @@
             label = "DTAPLEFTBRACKETS";
             #binding-cells = <0>;
             bindings =
-                <&kp LEFT_BRACKET>,
+                <&kp LEFT_PARENTHESIS>,
                 <&kp LEFT_BRACE>,
-                <&kp LEFT_PARENTHESIS>;
+                <&kp LEFT_BRACKET>;
         };
 
         DTapA: DTapA {
@@ -47,6 +47,20 @@
             label = "DTAPA";
             #binding-cells = <0>;
             bindings = <&kp A>, <&mt TILDE A>;
+        };
+
+        DTapLeftCommandControl: DTapLeftCommandControl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTAPLEFTCOMMANDCONTROL";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>, <&kp LCTRL>;
+        };
+
+        DTapRightPipe: DTapRightPipe {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTAPRIGHTPIPE";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp PIPE>;
         };
     };
 
@@ -62,11 +76,11 @@
             //                        | ALT  | GUI  | LOWER|  SPACE |  | BSPC  | ENTER| RAISE | CTRL  |
 
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                           &kp N6   &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB        &kp Q   &kp W   &kp E     &kp R      &kp T                                            &kp Y    &kp U   &kp I      &kp O    &kp P     &kp EQUAL
-&mt LCTRL ESC  &DTapA  &kp S   &kp D     &kp F      &kp G                                            &kp H    &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT      &kp Z   &kp X   &kp C     &kp V      &kp B   &DTapLeftBrackets    &DTapRightBrackets  &kp N    &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                               &kp LALT  &kp LMETA  &mo 2   &kp SPACE            &kp BSPC            &kp RET  &mo 1   &kp RCTRL
+&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4                   &kp N5                                           &kp N6   &kp N7  &kp N8     &kp N9   &kp N0          &kp MINUS
+&kp TAB        &kp Q   &kp W   &kp E     &kp R                    &kp T                                            &kp Y    &kp U   &kp I      &kp O    &kp P           &kp EQUAL
+&mt LCTRL ESC  &DTapA  &kp S   &kp D     &kp F                    &kp G                                            &kp H    &kp J   &kp K      &kp L    &kp SEMI        &kp SQT
+&kp LSHFT      &kp Z   &kp X   &kp C     &kp V                    &kp B   &DTapLeftBrackets    &DTapRightBrackets  &kp N    &kp M   &kp COMMA  &kp DOT  &DTapRightPipe  &kp RSHFT
+                               &kp LALT  &DTapLeftCommandControl  &mo 2   &kp SPACE            &kp BSPC            &kp RET  &mo 1   &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
